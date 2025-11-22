@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const DiscordStrategy = require('passport-discord').Strategy;
+const { Strategy: DiscordStrategy } = require('@oauth-everything/passport-discord');
 const cookieSession = require('cookie-session');
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGODB_URI)
 const userSchema = new mongoose.Schema({
   discordId: { type: String, required: true, unique: true },
   username: String,
-  discriminator: String,
+  globalName: String, // Note: Updated from deprecated 'discriminator' for modern Discord API
   avatar: String,
   accessToken: String,
   refreshToken: String
@@ -85,7 +85,7 @@ passport.use(new DiscordStrategy({
       user = new User({
         discordId: profile.id,
         username: profile.username,
-        discriminator: profile.discriminator,
+        globalName: profile.global_name, // Note: Using 'global_name' instead of deprecated 'discriminator'
         avatar: profile.avatar,
         accessToken,
         refreshToken

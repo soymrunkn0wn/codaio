@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoD AIO</title>
+
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="src/images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="src/images/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="header-right">
+            <button id="login-button">Login</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="cards-container">
+            <h2 class="cards-title">Our Services</h2>
+
+            <div class="cards-wrapper">
+
+                <div class="card">
+                    <img src="src/images/cronus.png" class="card-icon" alt="Cronus Zen">
+                    <h3 class="card-title">Cronus Zen Script</h3>
+                    <button class="buy-button" id="cronus-button">Purchase</button>
+                </div>
+
+                <div class="card">
+                    <img src="src/images/xim.png" class="card-icon" alt="XIM Matrix">
+                    <h3 class="card-title">XIM Matrix Script</h3>
+                    <button class="buy-button" id="xim-button">Purchase</button>
+                </div>
+
+                <div class="card">
+                    <img src="src/images/ranked.png" class="card-icon" alt="Ranked">
+                    <h3 class="card-title">Ranked Boost</h3>
+                    <button class="buy-button">Currently Unavailable</button>
+                </div>
+
+                <div class="card">
+                    <img src="src/images/camo.png" class="card-icon" alt="Camos">
+                    <h3 class="card-title">Camo Service</h3>
+                    <button class="buy-button">Currently Unavailable</button>
+                </div>
+
+                <div class="card">
+                    <img src="src/images/prestige.png" class="card-icon" alt="Prestige">
+                    <h3 class="card-title">Prestige Service</h3>
+                    <button class="buy-button">Currently Unavailable</button>
+                </div>
+
+                <div class="card">
+                    <img src="src/images/accounts.png" class="card-icon" alt="Accounts">
+                    <h3 class="card-title">Accounts</h3>
+                    <button class="buy-button">Currently Unavailable</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+</body>
+
+    <script>
+        const cronusButton = document.getElementById('cronus-button');
+
+        cronusButton.addEventListener('click', () => {
+            // Replace the URL below with the link you want to open
+            window.open('https://buy.stripe.com/14A9ATgKg4zYahW9BAabK01', '_blank');
+        });
+
+        const ximButton = document.getElementById('xim-button');
+
+        ximButton.addEventListener('click', () => {
+            // Replace the URL below with the link you want to open
+            window.open('https://buy.stripe.com/dRm14n2Tqc2q3Ty3dcabK02', '_blank');
+        });
+    </script>
+
+</html>

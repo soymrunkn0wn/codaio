@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* HEADER ------------------------------------------------------------- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+    background: linear-gradient(90deg, #161616, #1f1f1f);
+    border-bottom: 1px solid #ff6600;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 48px;
+}
+
+#login-button {
+    padding: 0.55rem 1.3rem;
+    border: none;
+    border-radius: 8px;
+    background: #ff6600;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#login-button:hover {
+    background: #e45500;
+    transform: translateY(-2px);
+}
+
+/* MAIN --------------------------------------------------------------- */
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+/* CARDS TITLE -------------------------------------------------------- */
+.cards-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    /* Animated gradient */
+    background: linear-gradient(90deg, #ff6600, #ffffff, #ff6600, #ffffff, #ff6600);
+    background-size: 200% 100%; /* wider gradient for smooth movement */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    animation: gradientSlide 5s linear infinite;
+}
+
+@keyframes gradientSlide {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* CARDS -------------------------------------------------------------- */
+.cards-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.card {
+    width: 280px;
+    padding: 1.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    text-align: center;
+    transition: 0.3s ease;
+    transform: translateY(0);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45));
+}
+
+.card-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* BUTTONS ------------------------------------------------------------ */
+.buy-button {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 12px;
+    background: #ff6a00;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.buy-button:hover {
+    background: #e05a00;
+    transform: scale(1.04);
+}
+
+/* ANIMATIONS ---------------------------------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE ---------------------------------------------------------- */
+@media (max-width: 600px) {
+    .header {
+        padding: 0.7rem 1rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+}

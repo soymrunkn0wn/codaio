@@ -69,7 +69,8 @@ body {
 
     /* Animated gradient */
     background: linear-gradient(90deg, #ff6600, #ffffff, #ff6600, #ffffff, #ff6600);
-    background-size: 200% 100%; /* wider gradient for smooth movement */
+    background-size: 200% 100%;
+    /* wider gradient for smooth movement */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -79,8 +80,13 @@ body {
 }
 
 @keyframes gradientSlide {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 /* CARDS -------------------------------------------------------------- */
@@ -110,14 +116,14 @@ body {
 
 .card:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 .card-icon {
     width: 80px;
     height: 80px;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.45));
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
 }
 
 .card-title {
@@ -151,6 +157,7 @@ body {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
